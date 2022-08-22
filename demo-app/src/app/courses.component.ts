@@ -17,7 +17,7 @@ import { CoursesService } from "./courses.service";
                     </tr>
                 </table>
 
-                <input #email (keyup.enter)="onKeyUp(email.value)" />
+                <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
 
                 <div (click)="onDivClicked()">
                     <button class="btn btn-primary" [class.active]="isActive" (click)="onSave()">Save</button>
@@ -29,7 +29,7 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = false;
     courses;
-    email: any;
+    email = "me@example.com";
 
     // Dependency Injection
     // This contructor has dependency on CoursesService
@@ -47,8 +47,8 @@ export class CoursesComponent {
         console.log("Div is clicked")
     }
 
-    onKeyUp(email: any) {
-        console.log(email);
+    onKeyUp() {
+        console.log(this.email);
     }
 
 }
