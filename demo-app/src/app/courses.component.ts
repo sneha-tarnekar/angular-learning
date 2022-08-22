@@ -22,6 +22,15 @@ import { CoursesService } from "./courses.service";
                 <div (click)="onDivClicked()">
                     <button class="btn btn-primary" [class.active]="isActive" (click)="onSave()">Save</button>
                 </div>
+
+                <h2>Pipe</h2>
+                {{ course.title | uppercase }} <br/>
+                {{ course.students | number }} <br/>
+                {{ course.rating | number:'1.2-2' }} <br/>
+                {{ course.price | currency:'USD' }} <br/>
+                {{ course.releaseDate | date:'shortDate' }} <br/><br/>
+
+                {{ text | summary:10 }}
     `
 })
 export class CoursesComponent {
@@ -30,6 +39,16 @@ export class CoursesComponent {
     isActive = false;
     courses;
     email = "me@example.com";
+
+    course = {
+        title: "Angular course",
+        rating: 4.8632,
+        students: 28002,
+        price: 200,
+        releaseDate: new Date(2016, 4, 1)
+    }
+
+    text = 'This is an angular demo app';
 
     // Dependency Injection
     // This contructor has dependency on CoursesService
