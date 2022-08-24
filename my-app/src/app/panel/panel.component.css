@@ -1,0 +1,15 @@
+.panel {
+    padding: 20px;
+}
+
+.panel-heading {
+    font-size: 30px ;
+    color: blue;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+.panel-body {
+    background-color: cornsilk;
+    padding: 10px;
+}

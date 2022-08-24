@@ -1,0 +1,11 @@
+<style>
+    .title {
+    color: rosybrown;
+    }
+</style>
+<h6 class="title">Checking style...<h6>
+<button 
+    class="btn"
+    [class.btn-primary]="isFavorite"
+    [class.btn-warning]="!isFavorite"
+    (click)="onClick()" style="margin: 20px;">Save</button>
